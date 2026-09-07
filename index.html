@@ -444,6 +444,7 @@ dialog::backdrop{background:rgba(5,10,25,.7);}
   radial-gradient(1000px 520px at 100% 110%, rgba(52,209,236,.16), transparent 60%),
   linear-gradient(160deg,#0f1729 0%,#0b1220 55%,#070c18 100%)!important;}
 .v28-screen-logo{background:none!important;height:84px!important;width:auto!important;border-radius:0!important;padding:0!important;box-shadow:none!important;}
+.v29-perf-chart-card{justify-content:flex-start!important;padding-top:20px!important;}
 
 @media (max-width: 1000px){
   .fh-header-inner{grid-template-columns:1fr;justify-items:center;}
@@ -6552,7 +6553,7 @@ function v28BarChart(data,unit,dark){
     </g>
     <line class="chart-sweep" x1="${l}" x2="${l}" y1="${t}" y2="${h-b}" stroke="#67e8f9" stroke-width="2" opacity="0"/>
     ${data.map((d,i)=>`<circle class="point" style="animation-delay:${1.0+i*.13}s" cx="${x(i)}" cy="${y(d.actual)}" r="6" fill="#fff" stroke="#34d1ec" stroke-width="4"><title>${v28E(d.label)}: ${v28Num(d.actual,1)} ${unit}</title></circle><text class="value-label" style="animation-delay:${1.08+i*.13}s" x="${x(i)}" y="${y(d.actual)-12}" text-anchor="middle" fill="${valueText}" font-size="11" font-weight="800">${v28Num(d.actual,1)}</text><text class="category-label" style="animation-delay:${.55+i*.06}s" x="${x(i)}" y="${h-34}" text-anchor="middle" fill="${catText}" font-size="11">${v28E(String(d.label).slice(0,13))}</text>`).join('')}
-    <text class="axis-label" x="18" y="${h/2}" transform="rotate(-90 18 ${h/2})" text-anchor="middle" fill="${axisText}" font-size="11">${unit}</text>
+    <text class="axis-label" x="8" y="${h/2}" transform="rotate(-90 8 ${h/2})" text-anchor="middle" fill="${axisText}" font-size="11">${unit}</text>
   </svg><div class="v29-chart-legend"><span><i class="v29-legend-line" style="background:#34d1ec"></i>Actual rate</span><span><i class="v29-legend-line" style="background:#e12520"></i>Target</span></div></div>`
 }
 
